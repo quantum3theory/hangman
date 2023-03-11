@@ -1,4 +1,5 @@
 import random
+import re
 
 class Hangman:
     def __init__ (self, word_list, num_lives=5):
@@ -11,7 +12,8 @@ class Hangman:
         #number of lives
         self.num_lives = num_lives
         # Word guessed
-        self.word_guessed = list(self.word)
+        self.word_guessed = list(map(lambda i: i.replace(i, '_'), list(self.word)))
+        
         #A list of the guesses that have already been tried. Set this to an empty list initially.
         self.list_of_guesses = []
 
@@ -26,11 +28,9 @@ class Hangman:
 
     #This is the check_guess function wich 
     def check_guess(self):
+        print(self.word_guessed)
         self.guess = self.guess.lower()
         if self.guess in self.word:
             print(f"Good guess! {self.guess}")
         else:
             print(f"Sorry, {self.guess} is not in the word. Try again.")
-
-    
-     
