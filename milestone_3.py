@@ -1,4 +1,5 @@
 import random
+
 #create list of favourite fruits
 word_list = ['apple','banana','peach','pineapple', 'watermellon']
 #randomly selecting a fruit from the list
