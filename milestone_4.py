@@ -1,7 +1,7 @@
 import random
 
 class Hangman:
-    def __init__ (self):
+    def __init__ (self, num_lives=5):
         #create list of favourite fruits
         self.word_list = ['apple','banana','peach','pineapple', 'watermellon']
         #randomly select a fruit from the list
@@ -9,7 +9,7 @@ class Hangman:
         #The number of UNIQUE letters in the word that have not been guessed yet.
         self.num_letters = len(set(self.word))
         #number of lives
-        self.num_lives = 5
+        self.num_lives = num_lives
         # Word guessed
         self.word_guessed = list(self.word)
         #A list of the guesses that have already been tried. Set this to an empty list initially.
