@@ -1,9 +1,9 @@
 import random
 
 class Hangman:
-    def __init__ (self, word_list,num_lives=5): 
+    def __init__ (self, num_lives=5): 
         #create list of favourite fruits
-        self.word_list = word_list
+        self.word_list = ['apple','banana','peach','pineapple', 'watermellon']
         #randomly select a fruit from the list
         self.word = random.choice(self.word_list)
         #The number of UNIQUE letters in the word that have not been guessed yet.
@@ -17,8 +17,7 @@ class Hangman:
           
     #This is the check_guess function wich 
     def check_guess(self, guess):
-        self.guess = guess
-        self.guess = self.guess.lower()
+        self.guess = guess.lower()
         if self.guess in self.word:
             print(f"Good guess! {self.guess} is in the word.")
             return self.guess
@@ -39,7 +38,7 @@ class Hangman:
                 return self.list_of_guesses.append(self.guess)
 
 
-x = Hangman(['peach', 'apricot'])
+x = Hangman()
 print(x.ask_for_input())
                 
         
