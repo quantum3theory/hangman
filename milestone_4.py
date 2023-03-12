@@ -22,19 +22,16 @@ class Hangman:
             print(f"Good guess! {guess} is in the word.")
             for i, letter in enumerate(self.word):
                 if letter == guess:
-                    self.word_guessed[i] = letter
+                    self.word_guessed[i] = guess
                     print(self.word_guessed)
-                    break
-                else:
-                    pass
+                    
             self.num_letters -= 1
             print(self.num_letters)
-            return guess
+
         else:
             self.num_letters -= 1
             print(f"Sorry, {guess} is not in the word. Try again.")
             print(f"You have {self.num_lives} lives left.")
-            pass
 
     #function that asks for the user's input        
     def ask_for_input(self):
