@@ -3,7 +3,7 @@ import random
 class Hangman:
     def __init__ (self, word_list, num_lives = 5): 
         #create list of favourite fruits
-        self.word_list = word_list
+        self.word_list = ['apple','banana','peach','pineapple', 'watermellon']
         #randomly select a fruit from the list
         self.word = random.choice(word_list)
         #The number of UNIQUE letters in the word that have not been guessed yet.
@@ -34,6 +34,7 @@ class Hangman:
             self.num_letters -= 1
             print(f"Sorry, {guess} is not in the word. Try again.")
             print(f"You have {self.num_lives} lives left.")
+            pass
 
     #function that asks for the user's input        
     def ask_for_input(self):
