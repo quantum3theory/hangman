@@ -35,9 +35,9 @@ class Hangman:
             elif self.guess in self.list_of_guesses:
                 print("You already tried that letter!")
             else:
-                self.list_of_guesses += self.guess
-                print(self.list_of_guesses)
-                return Hangman.check_guess(self, self.guess)
+                Hangman.check_guess(self, self.guess)
+                return self.list_of_guesses.append(self.guess)
+
 
 x = Hangman(['peach', 'apricot'])
 print(x.ask_for_input())
