@@ -49,8 +49,8 @@ class Hangman:
                 break
 
 
-x = Hangman(['apple'])
-x.ask_for_input()
-x.check_guess('p')               
+#x = Hangman(['apple'])
+#x.ask_for_input()
+#x.check_guess('p')               
         
     
