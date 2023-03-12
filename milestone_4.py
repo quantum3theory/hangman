@@ -1,8 +1,7 @@
 import random
-import re
 
 class Hangman:
-    def __init__ (self, word_list, num_lives=5):
+    def __init__ (self, word_list,num_lives=5): 
         #create list of favourite fruits
         self.word_list = word_list
         #randomly select a fruit from the list
@@ -12,25 +11,36 @@ class Hangman:
         #number of lives
         self.num_lives = num_lives
         # Word guessed
-        self.word_guessed = list(map(lambda i: i.replace(i, '_'), list(self.word)))
-        
+        self.word_guessed = list(map(lambda i: i.replace(i, '_'), list(self.word))) 
         #A list of the guesses that have already been tried. Set this to an empty list initially.
         self.list_of_guesses = []
+          
+    #This is the check_guess function wich 
+    def check_guess(self, guess):
+        self.guess = guess
+        self.guess = self.guess.lower()
+        if self.guess in self.word:
+            print(f"Good guess! {self.guess} is in the word.")
+            return self.guess
+        else:
+            print(f"Sorry, {self.guess} is not in the word. Try again.")
 
+    #function that asks for the user's input        
     def ask_for_input(self):
         #Asks for user's input so you can 
         self.guess = input("Please type your letter here: ")
         while True:
-            if len(self.guess)==1 and self.guess.isalpha():
-                break
-            else:
+            if len(self.guess)>1 and not self.guess.isalpha():
                 print("Invalid letter. Please, enter a single alphabetical character.")
+            elif self.guess in self.list_of_guesses:
+                print("You already tried that letter!")
+            else:
+                self.list_of_guesses += self.guess
+                print(self.list_of_guesses)
+                return Hangman.check_guess(self, self.guess)
 
-    #This is the check_guess function wich 
-    def check_guess(self):
-        print(self.word_guessed)
-        self.guess = self.guess.lower()
-        if self.guess in self.word:
-            print(f"Good guess! {self.guess}")
-        else:
-            print(f"Sorry, {self.guess} is not in the word. Try again.")
+x = Hangman(['peach', 'apricot'])
+print(x.ask_for_input())
+                
+        
+    
