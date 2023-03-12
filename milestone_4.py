@@ -5,7 +5,7 @@ class Hangman:
         #create list of favourite fruits
         self.word_list = word_list
         #randomly select a fruit from the list
-        self.word = random.choice(self.word_list)
+        self.word = random.choice(word_list)
         #The number of UNIQUE letters in the word that have not been guessed yet.
         self.num_letters = len(set(self.word))
         #number of lives
