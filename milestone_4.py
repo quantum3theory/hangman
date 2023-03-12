@@ -16,30 +16,31 @@ class Hangman:
         self.list_of_guesses = []
           
     #This is the check_guess function wich 
-    def check_guess(self, guess):
-        self.guess = guess.lower()
-        if self.guess in self.word:
-            print(f"Good guess! {self.guess} is in the word.")
-            return self.guess
+    def check_guess(self,guess):
+        guess = guess.lower()
+        if guess in self.word:
+            print(f"Good guess! {guess} is in the word.")
+            return guess
         else:
-            print(f"Sorry, {self.guess} is not in the word. Try again.")
+            print(f"Sorry, {guess} is not in the word. Try again.")
 
     #function that asks for the user's input        
     def ask_for_input(self):
         #Asks for user's input so you can 
-        self.guess = input("Please type your letter here: ")
+        guess = input("Please type your letter here: ")
         while True:
-            if len(self.guess)>1 and not self.guess.isalpha():
+            if len(guess)>1 and not guess.isalpha():
                 print("Invalid letter. Please, enter a single alphabetical character.")
-            elif self.guess in self.list_of_guesses:
+            elif guess in self.list_of_guesses:
                 print("You already tried that letter!")
             else:
-                Hangman.check_guess(self, self.guess)
-                return self.list_of_guesses.append(self.guess)
+                self.check_guess(guess)
+                self.list_of_guesses.append(guess)
+                break
 
 
-x = Hangman()
-print(x.ask_for_input())
+x = Hangman(['apple'])
+x.ask_for_input()
                 
         
     
