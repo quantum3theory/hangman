@@ -1,7 +1,7 @@
 import random
 
 class Hangman:
-    def __init__ (self, word_list, num_lives=5): 
+    def __init__ (self, word_list, num_lives = 5): 
         #create list of favourite fruits
         self.word_list = word_list
         #randomly select a fruit from the list
@@ -11,7 +11,7 @@ class Hangman:
         #number of lives
         self.num_lives = num_lives
         # Word guessed
-        self.word_guessed =['_'] * len(self.word)
+        self.word_guessed = ['_'] * len(self.word)
         #A list of the guesses that have already been tried. Set this to an empty list initially.
         self.list_of_guesses = []
           
@@ -24,6 +24,7 @@ class Hangman:
                 if letter == guess:
                     self.word_guessed[i] = letter
                     print(self.word_guessed)
+                    break
                 else:
                     pass
             self.num_letters -= 1
