@@ -11,7 +11,7 @@ class Hangman:
         #number of lives
         self.num_lives = num_lives
         # Word guessed
-        self.word_guessed = list(map(lambda i: i.replace(i, '_'), list(self.word))) 
+        self.word_guessed =['_'] * len(self.word)
         #A list of the guesses that have already been tried. Set this to an empty list initially.
         self.list_of_guesses = []
           
@@ -20,9 +20,19 @@ class Hangman:
         guess = guess.lower()
         if guess in self.word:
             print(f"Good guess! {guess} is in the word.")
+            for i, letter in enumerate(self.word):
+                if letter == guess:
+                    self.word_guessed[i] = letter
+                    print(self.word_guessed)
+                else:
+                    pass
+            self.num_letters -= 1
+            print(self.num_letters)
             return guess
         else:
+            self.num_letters -= 1
             print(f"Sorry, {guess} is not in the word. Try again.")
+            print(f"You have {self.num_lives} lives left.")
 
     #function that asks for the user's input        
     def ask_for_input(self):
@@ -41,6 +51,6 @@ class Hangman:
 
 x = Hangman(['apple'])
 x.ask_for_input()
-                
+x.check_guess('p')               
         
     
