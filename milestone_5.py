@@ -1,6 +1,6 @@
 import random
 class Hangman:
-    def __init__ (self, word_list, num_lives): 
+    def __init__ (self, word_list, num_lives = 5): 
         #create list of favourite fruits
         self.word_list = word_list
         #randomly select a fruit from the list
