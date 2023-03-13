@@ -1,6 +1,6 @@
 import random
 class Hangman:
-    def __init__ (self, word_list, num_lives = 5): 
+    def __init__ (self, word_list, num_lives): 
         #create list of favourite fruits
         self.word_list = word_list
         #randomly select a fruit from the list
@@ -54,14 +54,13 @@ def play_game(word_list):
     num_lives = 5
     game = Hangman(word_list, num_lives)
     while True:
-        if num_lives == 0:
+        if game.num_lives == 0:
             print('You lost!')
             break
         elif game.num_letters > 0:
             game.ask_for_input()
-        elif num_lives != 0 and game.num_letters <= 0:
+        elif game.num_lives != 0 and game.num_letters < 0:
             print('Congratulation. You won the game!')
             break
             
-            
-game_1 = Hangman.play_game('banana')
+game_1 = play_game('banana')
