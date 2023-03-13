@@ -23,6 +23,7 @@ A repository containing the guide for AiCore Milestone 3. This syntax creates tw
 - updates the documentation 
 
 # Python Hangman Milestone 5
-- this programme checks for 
-- this programme checks for
+- creates a function play_game that takes word_list as a parameter. 
+- inside this function we call the Hangman class and we pass word_list and num_lives as arguments to the object.
+- it calls the play_game parameter and it prints Congratulation you won the game if the word is guessed or You lost if the word is not guessed. 
 

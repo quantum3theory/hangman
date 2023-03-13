@@ -1,7 +1,9 @@
+#this is a test 
 import random
 
-class Hangman:
-    def __init__ (self, word_list, num_lives): 
+class Hangman():
+    
+    def __init__ (self, word_list, num_lives=5): 
         #create list of favourite fruits
         self.word_list = word_list
         #randomly select a fruit from the list
@@ -23,10 +25,10 @@ class Hangman:
             for i, letter in enumerate(self.word):
                 if letter == guess:
                     self.word_guessed[i] = guess
-                    print(self.word_guessed)
+                    print(f"word guessed: {self.word_guessed}")
                     
             self.num_letters -= 1
-            print(self.num_letters)
+            print(f"number of letters {self.num_letters}")
 
         else:
             self.num_lives -= 1
@@ -47,20 +49,19 @@ class Hangman:
                 self.check_guess(guess)
                 self.list_of_guesses.append(guess)
                 break
-
-
-
-def play_game( word_list, num_lives):
+            
+def play_game(word_list):
     num_lives = 5
     game = Hangman(word_list, num_lives)
     while True:
-        if num_lives == 0:
+        if game.num_lives == 0:
             print('You lost!')
+            break
         elif game.num_letters > 0:
             game.ask_for_input()
-        elif num_lives != 0 and game.num_letters < 0:
+        elif num_lives != 0 and game.num_letters <= 0:
             print('Congratulation. You won the game!')
             break
-                
-        
-game_1 = play_game(['apple','banana','peach','pineapple', 'watermellon'],5)
+            
+            
+game_1 = play_game(['apple','banana','peach','pineapple', 'watermellon'])
