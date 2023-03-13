@@ -49,8 +49,7 @@ class Hangman:
 
 def play_game(word_list):
     word_list = [word_list]
-    num_lives = 5
-    game = Hangman(word_list, num_lives)
+    game = Hangman(word_list, num_lives=5)
     while True:
         if game.num_lives == 0:
             print('You lost!')
