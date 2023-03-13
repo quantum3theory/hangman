@@ -1,4 +1,3 @@
-#this is a test 
 import random
 
 class Hangman():
@@ -52,7 +51,7 @@ class Hangman():
             
 def play_game(word_list):
     num_lives = 5
-    game = Hangman(word_list, num_lives)
+    game = Hangman([word_list], num_lives)
     while True:
         if game.num_lives == 0:
             print('You lost!')
@@ -64,4 +63,4 @@ def play_game(word_list):
             break
             
             
-game_1 = play_game(['apple','banana','peach','pineapple', 'watermellon'])
+game_1 = play_game('banana')
