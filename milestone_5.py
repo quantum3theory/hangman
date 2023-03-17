@@ -48,7 +48,7 @@ class Hangman:
                 break
 
 def play_game(word_list):
-    #word_list = [word_list]
+    word_list = [word_list]
     game = Hangman(word_list,5)
     while True:
         if game.num_lives == 0:
