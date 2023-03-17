@@ -48,17 +48,19 @@ class Hangman:
                 break
 
 def play_game(word_list):
-    word_list = [word_list]
-    game = Hangman(word_list, num_lives=5)
+    game = Hangman(word_list,5)
     while True:
         if game.num_lives == 0:
             print('You lost!')
-            break
+            return()
         elif game.num_letters > 0:
             game.ask_for_input()
         else:
             print('Congratulation. You won the game!')
-            break
+            return()
     
             
-game_1 = play_game('banana')
+#game_1 = play_game('banana')
+
+print(Hangman.__dict__)
+print(play_game.__dict__)
