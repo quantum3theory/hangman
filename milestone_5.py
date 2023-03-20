@@ -2,7 +2,7 @@ import random
 class Hangman:
     def __init__ (self, word_list, num_lives): 
         #create list of favourite fruits
-        self.word_list = word_list
+        self.word_list = [word_list]
         #randomly select a fruit from the list
         self.word = random.choice(word_list)
         #The number of UNIQUE letters in the word that have not been guessed yet.
@@ -48,7 +48,6 @@ class Hangman:
                 break
 
 def play_game(word_list):
-    word_list = [word_list]
     game = Hangman(word_list,5)
     while True:
         if game.num_lives == 0:
@@ -60,5 +59,5 @@ def play_game(word_list):
             print('Congratulation. You won the game!')
             break
     
-            
-game_1 = play_game('banana')
+word_list =  ['apple','banana','peach','pineapple', 'watermellon']        
+play_game(word_list)
